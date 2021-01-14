@@ -11,6 +11,10 @@
     "SelecioarPrimeiraProdutoDaPesquisa": {
       "type": "CSS",
       "value": "#center_column > ul > li:nth-child(1) > div > div.left-block > div"
+    },
+	"CampoDeSingnIn": {
+      "type": "XPATH",
+      "value": "//a[contains(text(),'Sign in')]"
     }
   }
 }

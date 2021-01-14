@@ -13,8 +13,13 @@ public class HomePage extends BasePage {
         fillInput(produto, element.getCampoDePesquisa());
         click(element.getCampoDePesquisaSumbit());
     }
+    
     public static void selecionarPrimeiroResultadoDaPesquisa(){
         click(element.getSelecioarPrimeiraProdutoDaPesquisa());
     }
+    
+    public static void selecionarCampoDeSignIn(){
+        click(element.getCampoDeSingnIn());
+    } 
 
 }

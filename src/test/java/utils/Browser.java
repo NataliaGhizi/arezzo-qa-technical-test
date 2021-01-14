@@ -15,12 +15,12 @@ public class Browser {
 
     public static synchronized WebDriver createDrive() {
         if(driver == null) {
-            System.setProperty("webdriver.chrome.driver", "#PathToDriver");
+            System.setProperty("webdriver.chrome.driver", "C:\\\\chromedriver.exe");
             try {
                 ChromeOptions options = new ChromeOptions();
                 DesiredCapabilities caps = DesiredCapabilities.chrome();
                 caps.setBrowserName("chrome");
-                caps.setVersion("86.0");
+                caps.setVersion("87.0");
                 caps.merge(options);
                 driver = new ChromeDriver(options);
                 wait = new WebDriverWait(driver, 30);

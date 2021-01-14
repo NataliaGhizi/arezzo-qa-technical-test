@@ -4,6 +4,7 @@ import models.BaseGeneric;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Element extends Browser {
@@ -21,6 +22,24 @@ public class Element extends Browser {
 			return driver.findElement(By.xpath(generic.getValue()));
 		case "NAME":
 			return driver.findElement(By.name(generic.getValue()));
+		default:
+			return null;
+		}
+	}
+	
+	public static Select selectElement(BaseGeneric generic) {
+		waitElement(generic);
+		switch (generic.getType()) {
+		case "ID":
+			return new Select( driver.findElement(By.id(generic.getValue())) );
+		case "CLASS":
+			return new Select( driver.findElement(By.className(generic.getValue())) );
+		case "CSS":
+			return new Select( driver.findElement(By.cssSelector(generic.getValue())) );
+		case "XPATH":
+			return new Select( driver.findElement(By.xpath(generic.getValue())) );
+		case "NAME":
+			return new Select( driver.findElement(By.name(generic.getValue())) );
 		default:
 			return null;
 		}

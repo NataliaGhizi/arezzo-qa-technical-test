@@ -1,14 +1,15 @@
 package steps;
 
 import utils.Browser;
+
 import utils.Utils;
-import cucumber.api.Scenario;
-import cucumber.api.java8.Pt;
 
-public class BaseStep implements Pt {
+import io.cucumber.java8.Scenario;
 
+public class BaseStep implements io.cucumber.java8.En {
+	
 	public BaseStep() {
-		Before((Scenario scenario) -> {
+		Before( ( Scenario scenario) -> {
 
 			//System.setProperty("webdriver.chrome.driver", Utils.webdriverLocation());
 			System.out.println("Base URL: " + Utils.getBaseUrl());
@@ -16,12 +17,12 @@ public class BaseStep implements Pt {
 		});
 
 		After((scenario) -> {
-			System.out.println("Cen√°rio teste: " + scenario.getName());
-			System.out.println("Status teste: " + scenario.getStatus().toUpperCase());
+			System.out.println("Cen·rio teste: " + scenario.getName());
+			System.out.println("Status teste: " + scenario.getStatus());
 			System.out.println("---------------------------------------------------------------------------------------------------");
 			Browser.close();
 		});
 	}
-
 }
+
 

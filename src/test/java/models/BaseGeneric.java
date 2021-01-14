@@ -24,5 +24,13 @@ public class BaseGeneric extends Generic {
         this.value = String.format(value, args);
         return this;
     }
+    
+    public String getValue() {
+		return this.value;
+	}
+    
+    public String getType() {
+		return this.type;
+	}
 
 }
